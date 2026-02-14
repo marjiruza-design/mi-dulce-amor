@@ -1,1 +1,168 @@
-# mi-dulce-amor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #1b1b2f, #3a2f4f);
+        color: #fff;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    /* HEART */
+    .heart-container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .heart {
+        width: 120px;
+        height: 120px;
+        background: #ff5c8a;
+        position: relative;
+        transform: rotate(-45deg);
+        animation: pulse 1.5s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+        content: "";
+        width: 120px;
+        height: 120px;
+        background: #ff5c8a;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .heart::before {
+        top: -60px;
+        left: 0;
+    }
+
+    .heart::after {
+        left: 60px;
+        top: 0;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1) rotate(-45deg); }
+        50% { transform: scale(1.1) rotate(-45deg); }
+        100% { transform: scale(1) rotate(-45deg); }
+    }
+
+    /* LETTER */
+    .letter {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        display: none;
+        animation: open 2s ease;
+    }
+
+    @keyframes open {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        color: #ffd6e8;
+        margin-bottom: 25px;
+    }
+
+    p {
+        text-align: justify;
+        line-height: 1.8;
+        font-size: 1.1em;
+    }
+
+    /* PHOTOS */
+    .gallery {
+        margin: 60px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        max-width: 900px;
+        padding: 0 20px;
+    }
+
+    .gallery img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    footer {
+        margin: 40px 0;
+        font-style: italic;
+        color: #ffc1d9;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC (opcional) -->
+<audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HEART -->
+<div class="heart-container" onclick="openLetter()">
+    <div class="heart"></div>
+</div>
+
+<!-- LETTER -->
+<div id="letter" class="letter">
+    <h1>For You 🤍</h1>
+
+    <p>
+        If life did not exist with you, then I would not exist either.
+        I am grateful to know that my time moves forward by your side,
+        that I can dwell with you in that intimate space where only our souls
+        know how to love each other in calm.
+        I am grateful to see you upon waking, in that moment when I understand
+        that I am alive and that I live within you.
+    </p>
+
+    <p>
+        I am grateful to understand that I only know how to love if it is you,
+        that with you I can run, laugh, and cry in the same place,
+        in the distance of our love and also in its closest moment.
+        I know that I will never find another soul like yours:
+        the one I long to see in intimate vulnerability,
+        where my inner child and my love reside.
+    </p>
+
+    <footer>
+        — Always yours ❤️
+    </footer>
+</div>
+
+<!-- PHOTOS -->
+<div class="gallery">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+</div>
+
+<script>
+function openLetter() {
+    document.querySelector(".heart-container").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+}
+</script>
+
+</body>
+</html>
